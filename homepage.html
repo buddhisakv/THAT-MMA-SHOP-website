@@ -4,8 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <header class="navbar">
+        <div class="logo">
+          <a href="#"><img src="THAT MMA SHOP LOGO.png" alt="That MMA Shop Logo" /></a>
+        </div>
+      
+        <div class="nav-container">
+          <nav class="nav-menu">
+            <a href="products.html">Gloves</a>
+            <a href="#">Footwear</a>
+            <a href="#">Equipment</a>
+            <a href="#">Apparel</a>
+            <a href="#">Brands</a>
+            <a href="#">Youths</a>
+          </nav>
+          <div class="nav-icons">
+            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-cart" aria-label="Open Cart"> 
+                <img src="cart icon.png" alt="Cart" /> 
+            </button>
+          </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <a href="products.html"><img src="Gloves Banner.jpeg" alt="New Items" /></a>
+    </section>
+
+    <h1 class="section-heading"> NEW ARRIVALS </h1>
+        
+    <section class="product-preview-grid">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="nike-machomai-3-white-black-boxing-shoes.jpeg" alt="Nike Machomai 3 Boxing Shoes" />
+          </div>
+          <h3>Nike Machomai 3 Boxing Shoes</h3>
+          <p class="price">$199.95</p>
+        </div>
+      
+        <a href="products.html" class="product-link">
+            <div class="product-card">
+              <div class="image-wrapper">
+                <img src="SKS-Sakyant-Gloves-White-Side-Front.jpeg" alt="SKS Muay Thai Gloves" />
+              </div>
+              <h3>SKS White Sakayant Muay Thai Gloves</h3>
+              <p class="price">$229.95</p>
+            </div>
+        </a>
+      
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="Engage-Choc-Orange-2in1-Gladiator-Shorts.jpeg" alt="Engage Shorts" />
+          </div>
+          <h3>Engage 2-in-1 Gladiator Shorts</h3>
+          <p class="price">$159.95</p>
+        </div>
+      
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="engage-essential-athlete-backpack-front.jpeg" alt="Athlete Backpack" />
+          </div>
+          <h3>Engage Essential Athlete Backpack</h3>
+          <p class="price">$159.95</p>
+        </div>
+      </section>
+
+    <!-- CART SIDEPANEL -->
+    <div id="cart-panel" class="cart-panel">
+        <button id="close-cart" aria-label="Close Cart">✖</button>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+        <a href="checkout.html" class="checkout-btn">Go To Checkout</a>
+    </div>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          
+          <!-- 1. About / Branding -->
+          <div class="footer-section">
+            <h4>About Us</h4>
+            <p>THAT MMA SHOP is your go-to store for high-quality MMA gear and fight equipment. Trusted by fighters worldwide.</p>
+          </div>
+      
+          <!-- 2. Quick Links -->
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="products.html">Gloves</a></li>
+              <li><a href="#">Footwear</a></li>
+              <li><a href="#">Apparel</a></li>
+            </ul>
+          </div>
+      
+          <!-- 3. Customer Service -->
+          <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- 4. Social / Newsletter -->
+          <div class="footer-section">
+            <h4>Stay Connected</h4>
+            <form>
+              <input type="email" placeholder="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-icons">
+              <a href="#"><img src="Instagram_icon.png" alt="Instagram" /></a>
+            </div>
+          </div>
+      
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 THAT MMA SHOP. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
 </body>
 </html>
