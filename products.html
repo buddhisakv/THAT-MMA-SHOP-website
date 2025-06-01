@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header class="navbar">
+        <div class="logo">
+          <a href="homepage.html"><img src="THAT MMA SHOP LOGO.png" alt="That MMA Shop Logo" /></a>
+        </div>
+      
+        <div class="nav-container">
+          <nav class="nav-menu">
+            <a href="products.html">Gloves</a>
+            <a href="#">Footwear</a>
+            <a href="#">Equipment</a>
+            <a href="#">Apparel</a>
+            <a href="#">Brands</a>
+            <a href="#">Youths</a>
+          </nav>
+          <div class="nav-icons">
+            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-cart" aria-label="Open Cart"> 
+                <img src="cart icon.png" alt="Cart" /> 
+            </button>
+          </div>
+        </div>
+    </header>
+
+    <h1 class="section-heading"> GLOVES </h1>
+
+    <div class="filter-sort">
+        <div class="filters">
+            <h4>Filter By:</h4>
+            <!-- BRAND Filter -->
+            <div class="dropdown">
+              <button class="dropdown-toggle">Brand</button>
+              <div class="dropdown-menu">
+                <label><input type="checkbox" name="brand" value="hayabusa" class="brand-filter"> Hayabusa</label>
+                <label><input type="checkbox" name="brand" value="sks" class="brand-filter"> SKS</label>
+                <label><input type="checkbox" name="brand" value="twins" class="brand-filter"> Twins</label>
+                <label><input type="checkbox" name="brand" value="cleto" class="brand-filter"> Cleto Reyes</label>
+                <label><input type="checkbox" name="brand" value="venum" class="brand-filter"> Venum</label>
+                <label><input type="checkbox" name="brand" value="fairtex" class="brand-filter"> Fairtex</label>
+                <label><input type="checkbox" name="brand" value="rival" class="brand-filter"> Rival</label>
+                <label><input type="checkbox" name="brand" value="leone" class="brand-filter"> Leone</label>
+                <label><input type="checkbox" name="brand" value="top king" class="brand-filter"> Top King</label>
+                <label><input type="checkbox" name="brand" value="boon" class="brand-filter"> Boon</label>
+                <button class="reset-btn" onclick="document.querySelectorAll('.brand-filter').forEach(cb => cb.checked = false); applyFilters();">Reset</button>
+              </div>
+            </div>
+          
+            <!-- PRICE Filter -->
+            <div class="dropdown">
+              <button class="dropdown-toggle">Price</button>
+              <div class="dropdown-menu price-range-dropdown">
+                <p>The highest price is $1,099.95</p>
+                <div class="price-inputs">
+                  <label>
+                    <span>$</span>
+                    <input type="number" id="min-price" placeholder="From" />
+                  </label>
+                  <label>
+                    <span>$</span>
+                    <input type="number" id="max-price" placeholder="To" />
+                  </label>
+                </div>
+                <button class="reset-btn" onclick="document.getElementById('min-price').value='';document.getElementById('max-price').value='';applyFilters();">Reset</button>
+              </div>
+            </div>
+          
+            <!-- COLOUR Filter -->
+            <div class="dropdown">
+              <button class="dropdown-toggle">Colour</button>
+              <div class="dropdown-menu">
+                <label><input type="checkbox" name="colour" value="Red" class="color-filter"> Red</label>
+                <label><input type="checkbox" name="colour" value="Blue" class="color-filter"> Blue</label>
+                <label><input type="checkbox" name="colour" value="White" class="color-filter"> White</label>
+                <label><input type="checkbox" name="colour" value="Black" class="color-filter"> Black</label>
+                <button class="reset-btn" onclick="document.querySelectorAll('.color-filter').forEach(cb => cb.checked = false); applyFilters();">Reset</button>
+              </div>
+            </div>
+          
+            <!-- SIZE Filter -->
+            <div class="dropdown">
+              <button class="dropdown-toggle">Size</button>
+              <div class="dropdown-menu">
+                <label><input type="checkbox" name="size" value="10oz" class="size-filter"> 10 oz</label>
+                <label><input type="checkbox" name="size" value="12oz" class="size-filter"> 12 oz</label>
+                <label><input type="checkbox" name="size" value="14oz" class="size-filter"> 14 oz</label>
+                <label><input type="checkbox" name="size" value="16oz" class="size-filter"> 16 oz</label>
+                <button class="reset-btn" onclick="document.querySelectorAll('.size-filter').forEach(cb => cb.checked = false); applyFilters();">Reset</button>
+              </div>
+            </div>
+          
+            <!-- PRODUCT TYPE Filter -->
+            <div class="dropdown">
+              <button class="dropdown-toggle">Product Type</button>
+              <div class="dropdown-menu">
+                <label><input type="checkbox" name="type" value="Boxing Gloves" class="type-filter"> Boxing Gloves</label>
+                <label><input type="checkbox" name="type" value="Muay Thai Gloves" class="type-filter"> Muay Thai Gloves</label>
+                <label><input type="checkbox" name="type" value="Training Gloves" class="type-filter"> Training Gloves</label>
+                <button class="reset-btn" onclick="document.querySelectorAll('.type-filter').forEach(cb => cb.checked = false); applyFilters();">Reset</button>
+              </div>
+            </div>
+        </div>
+          
+        
+        <div class="sort">
+          <h4>Sort By:</h4>
+          <select id="sort-options" name="sort">
+            <option selected>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+      
+      <section class="product-preview-grid">
+        <!-- Row 1 -->
+        <div 
+        onclick="openProductPage('Hayabusa T3 Boxing Gloves', 259.95, 'hayabusa-t3-boxing-gloves.jpg', ['Red', 'Blue', 'White', 'Black'], 'Premium quality gloves built for performance and durability.')"
+        class="product-card" data-brand="Hayabusa" data-price="259.95" data-colour="Red,Blue,White" data-size="12oz" data-type="Boxing Gloves">
+          <div class="image-wrapper">
+            <img src="hayabusa-t3-boxing-gloves.jpg" alt="Hayabusa T3 Boxing Gloves">
+          </div>
+          <h3>Hayabusa T3 Boxing Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color white"></div>
+            <div class="color black"></div>
+          </div>
+          <p>$259.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div 
+        onclick="openProductPage('SKS White Sakayant Muay Thai Gloves', 199.95, 'SKS-Sakyant-Gloves-White-Side-Front.jpeg', ['Red', 'Blue', 'White'], 'Stylish Muay Thai gloves with traditional Sakayant design.')"
+        class="product-card" data-brand="SKS" data-price="199.95" data-colour="Red,Blue,White" data-size="10oz" data-type="Muay Thai Gloves">
+          <div class="image-wrapper">
+            <img src="SKS-Sakyant-Gloves-White-Side-Front.jpeg" alt="SKS Muay Thai Gloves">
+          </div>
+          <h3>SKS White Sakayant Muay Thai Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color white"></div>
+          </div>
+          <p>$199.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div 
+        onclick="openProductPage('Twins BGVL3 Muay Thai Boxing Gloves', 229.95, 'twins-special-bgvl3-muay-thai-boxing-gloves.jpeg', ['Red', 'Blue', 'White', 'Black'], 'Top-tier Muay Thai gloves trusted by pros.')"
+        class="product-card" data-brand="Twins" data-price="229.95" data-colour="Red,Blue,White,Black" data-size="14oz" data-type="Muay Thai Gloves">
+          <div class="image-wrapper">
+            <img src="twins-special-bgvl3-muay-thai-boxing-gloves.jpeg" alt="Twins BGVL3 Muay Thai Boxing Gloves">
+          </div>
+          <h3>Twins BGVL3 Muay Thai Boxing Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color white"></div>
+            <div class="color black"></div>
+          </div>
+          <p>$229.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div 
+        onclick="openProductPage('Cleto Reyes Training Boxing Gloves', 449.95, 'cleto-reyes-training-boxing-gloves.jpeg', ['Red', 'Blue', 'White', 'Black'], 'Handcrafted leather gloves made in Mexico, designed for elite performance.')"
+        class="product-card" data-brand="Cleto" data-price="449.95" data-colour="Red,Blue,White,Black" data-size="16oz" data-type="Training Gloves">
+          <div class="image-wrapper">
+            <img src="cleto-reyes-training-boxing-gloves.jpeg" alt="Cleto Reyes Training Boxing Gloves">
+          </div>
+          <h3>Cleto Reyes Training Boxing Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color white"></div>
+            <div class="color black"></div>
+          </div>
+          <p>$449.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <!-- Row 2 -->
+        <div class="product-card" data-brand="Venum" data-price="149.95" data-colour="Red,Black,White" data-size="10oz" data-type="Boxing Gloves">
+          <div class="image-wrapper">
+            <img src="venum-elite-gloves.jpeg" alt="Venum Elite Boxing Gloves">
+          </div>
+          <h3>Venum Elite Boxing Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color black"></div>
+            <div class="color white"></div>
+          </div>
+          <p>$149.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div class="product-card" data-brand="Fairtex" data-price="179.95" data-colour="Blue,Red,White" data-size="14oz" data-type="Muay Thai Gloves">
+          <div class="image-wrapper">
+            <img src="fairtex-muay-thai-gloves.jpeg" alt="Fairtex Muay Thai Gloves">
+          </div>
+          <h3>Fairtex Muay Thai Gloves</h3>
+          <div class="color-options">
+            <div class="color blue"></div>
+            <div class="color red"></div>
+            <div class="color white"></div>
+          </div>
+          <p>$179.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div class="product-card" data-brand="Rival" data-price="199.95" data-colour="Black,White" data-size="12oz" data-type="Boxing Gloves">
+          <div class="image-wrapper">
+            <img src="rival-rs1-gloves.jpeg" alt="Rival RS1 Ultra Boxing Gloves">
+          </div>
+          <h3>Rival RS1 Ultra Boxing Gloves</h3>
+          <div class="color-options">
+            <div class="color black"></div>
+            <div class="color white"></div>
+          </div>
+          <p>$199.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div class="product-card" data-brand="Leone" data-price="129.95" data-colour="White,Black,Red" data-size="10oz" data-type="Boxing Gloves">
+          <div class="image-wrapper">
+            <img src="leone-1947-gloves.jpeg" alt="Leone 1947 Boxing Gloves">
+          </div>
+          <h3>Leone 1947 Boxing Gloves</h3>
+          <div class="color-options">
+            <div class="color white"></div>
+            <div class="color black"></div>
+            <div class="color red"></div>
+          </div>
+          <p>$129.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <!-- Row 3 -->
+        <div class="product-card" data-brand="Top King" data-price="159.95" data-colour="Red,White,Black" data-size="12oz" data-type="Boxing Gloves">
+          <div class="image-wrapper">
+            <img src="topking-gloves.jpeg" alt="Top King Super Air Gloves">
+          </div>
+          <h3>Top King Super Air Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color white"></div>
+            <div class="color black"></div>
+          </div>
+          <p>$159.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div class="product-card" data-brand="Boon" data-price="169.95" data-colour="Black,White" data-size="14oz" data-type="Leather Gloves">
+          <div class="image-wrapper">
+            <img src="boon-gloves.jpeg" alt="Boon Sport Leather Gloves">
+          </div>
+          <h3>Boon Sport Leather Gloves</h3>
+          <div class="color-options">
+            <div class="color black"></div>
+            <div class="color white"></div>
+          </div>
+          <p>$169.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div class="product-card" data-brand="Twins" data-price="189.95" data-colour="Blue,White" data-size="12oz" data-type="Training Gloves">
+          <div class="image-wrapper">
+            <img src="twins-fbgv-gloves.jpeg" alt="Twins FBGV Training Gloves">
+          </div>
+          <h3>Twins FBGV Training Gloves</h3>
+          <div class="color-options">
+            <div class="color blue"></div>
+            <div class="color white"></div>
+          </div>
+          <p>$189.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      
+        <div class="product-card" data-brand="Hayabusa" data-price="89.95" data-colour="Red,Grey" data-size="10oz" data-type="Training Gloves">
+          <div class="image-wrapper">
+            <img src="hayabusa-s4-gloves.jpeg" alt="Hayabusa S4 Training Gloves">
+          </div>
+          <h3>Hayabusa S4 Training Gloves</h3>
+          <div class="color-options">
+            <div class="color red"></div>
+            <div class="color grey"></div>
+          </div>
+          <p>$89.95</p>
+          <button class="add-to-cart">Add To Cart</button>
+        </div>
+      </section>
+
+    <!-- CART SIDEPANEL -->
+    <div id="cart-panel" class="cart-panel">
+        <button id="close-cart" aria-label="Close Cart">✖</button>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+        <a href="checkout.html" class="checkout-btn">Go To Checkout</a>
+    </div>
+      
+      <footer class="site-footer">
+        <div class="footer-container">
+          
+          <!-- 1. About / Branding -->
+          <div class="footer-section">
+            <h4>About Us</h4>
+            <p>THAT MMA SHOP is your go-to store for high-quality MMA gear and fight equipment. Trusted by fighters worldwide.</p>
+          </div>
+      
+          <!-- 2. Quick Links -->
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="products.html">Gloves</a></li>
+              <li><a href="#">Footwear</a></li>
+              <li><a href="#">Apparel</a></li>
+            </ul>
+          </div>
+      
+          <!-- 3. Customer Service -->
+          <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- 4. Social / Newsletter -->
+          <div class="footer-section">
+            <h4>Stay Connected</h4>
+            <form>
+              <input type="email" placeholder="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-icons">
+              <a href="#"><img src="Instagram_icon.png" alt="Instagram" /></a>
+            </div>
+          </div>
+      
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 THAT MMA SHOP. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
+
+</body>
+</html>
