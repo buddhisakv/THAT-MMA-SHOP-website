@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+          <a href="homepage.html"><img src="THAT MMA SHOP LOGO.png" alt="That MMA Shop Logo" /></a>
+        </div>
+      
+        <div class="nav-container">
+          <nav class="nav-menu">
+            <a href="products.html">Gloves</a>
+            <a href="#">Footwear</a>
+            <a href="#">Equipment</a>
+            <a href="#">Apparel</a>
+            <a href="#">Brands</a>
+            <a href="#">Youths</a>
+          </nav>
+          <div class="nav-icons">
+            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-cart" aria-label="Open Cart"> 
+                <img src="cart icon.png" alt="Cart" /> 
+            </button>
+          </div>
+        </div>
+    </header>
+
+    <h1 class="section-heading">CHECKOUT</h1>
+
+    <main class="checkout-container">
+    <!-- Left: Payment & Contact -->
+        <section class="checkout-form">
+        <h2>Payment</h2>
+        <input type="text" placeholder="Card Number" />
+        <div class="row">
+            <input type="text" placeholder="Expiration Date MM/YY" />
+            <input type="text" placeholder="Security Code" />
+        </div>
+        <input type="text" placeholder="Name On Card" />
+        <hr />
+        <h2>Contact</h2>
+        <input type="email" placeholder="Email" />
+        <div class="row">
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+        </div>
+        <input type="text" placeholder="Address" />
+        <input type="text" placeholder="Apartment, suite, etc (Optional)" />
+        <div class="row">
+            <input type="text" placeholder="City" />
+            <input type="text" placeholder="State" />
+            <input type="text" placeholder="Postcode" />
+        </div>
+        <input type="text" placeholder="Phone Number" />
+        </section>
+
+        <!-- Right: Cart Summary -->
+        <section class="checkout-summary">
+        <h2>Cart</h2>
+        <div id="checkout-items" class="checkout-items"></div>
+        <div class="checkout-total">
+            <p><strong>Total: </strong><span id="checkout-total">$0.00</span></p>
+            <button class="confirm-btn">Confirm Purchase</button>
+        </div>
+        </section>
+    </main>
+
+    <!-- CART SIDEPANEL -->
+    <div id="cart-panel" class="cart-panel">
+        <button id="close-cart" aria-label="Close Cart">✖</button>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+        <a href="checkout.html" class="checkout-btn">Go To Checkout</a>
+    </div>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          
+          <!-- 1. About / Branding -->
+          <div class="footer-section">
+            <h4>About Us</h4>
+            <p>THAT MMA SHOP is your go-to store for high-quality MMA gear and fight equipment. Trusted by fighters worldwide.</p>
+          </div>
+      
+          <!-- 2. Quick Links -->
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="products.html">Gloves</a></li>
+              <li><a href="#">Footwear</a></li>
+              <li><a href="#">Apparel</a></li>
+            </ul>
+          </div>
+      
+          <!-- 3. Customer Service -->
+          <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- 4. Social / Newsletter -->
+          <div class="footer-section">
+            <h4>Stay Connected</h4>
+            <form>
+              <input type="email" placeholder="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-icons">
+              <a href="#"><img src="Instagram_icon.png" alt="Instagram" /></a>
+            </div>
+          </div>
+      
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 THAT MMA SHOP. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
+</body>
+</html>
