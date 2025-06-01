@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">
+          <a href="homepage.html"><img src="THAT MMA SHOP LOGO.png" alt="That MMA Shop Logo" /></a>
+        </div>
+      
+        <div class="nav-container">
+          <nav class="nav-menu">
+            <a href="products.html">Gloves</a>
+            <a href="#">Footwear</a>
+            <a href="#">Equipment</a>
+            <a href="#">Apparel</a>
+            <a href="#">Brands</a>
+            <a href="#">Youths</a>
+          </nav>
+          <div class="nav-icons">
+            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-cart" aria-label="Open Cart"> 
+                <img src="cart icon.png" alt="Cart" /> 
+            </button>
+          </div>
+        </div>
+    </header>
+
+    <main class="product-page-content">
+        <div class="product-image">
+          <img id="product-image" src="" alt="Product Image">
+        </div>
+        <div class="product-details">
+          <h1 id="product-title">Loading...</h1>
+          <p id="product-description">Loading description...</p>
+          <p id="product-price">$0.00</p>
+      
+          <div class="product-option-group">
+            <strong>Colour:</strong>
+            <div id="product-colors" class="color-options"></div>
+          </div>
+      
+          <div class="product-option-group">
+            <strong>Size:</strong>
+            <div id="product-sizes" class="size-options"></div>
+          </div>
+      
+          <div class="product-option-group">
+            <strong>Quantity:</strong>
+            <div class="quantity-selector">
+              <button id="decrease-qty">−</button>
+              <span id="quantity">1</span>
+              <button id="increase-qty">+</button>
+            </div>
+          </div>
+      
+          <button id="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </main>
+      
+
+    <!-- CART SIDEPANEL -->
+    <div id="cart-panel" class="cart-panel">
+        <button id="close-cart" aria-label="Close Cart">✖</button>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+        <a href="checkout.html" class="checkout-btn">Go To Checkout</a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+          
+          <!-- 1. About / Branding -->
+          <div class="footer-section">
+            <h4>About Us</h4>
+            <p>THAT MMA SHOP is your go-to store for high-quality MMA gear and fight equipment. Trusted by fighters worldwide.</p>
+          </div>
+      
+          <!-- 2. Quick Links -->
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="products.html">Gloves</a></li>
+              <li><a href="#">Footwear</a></li>
+              <li><a href="#">Apparel</a></li>
+            </ul>
+          </div>
+      
+          <!-- 3. Customer Service -->
+          <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- 4. Social / Newsletter -->
+          <div class="footer-section">
+            <h4>Stay Connected</h4>
+            <form>
+              <input type="email" placeholder="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-icons">
+              <a href="#"><img src="Instagram_icon.png" alt="Instagram" /></a>
+            </div>
+          </div>
+      
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 THAT MMA SHOP. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
+</body>
+</html>
