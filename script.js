@@ -368,3 +368,133 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+
+  // ===============================
+  // Search Function
+  // ===============================
+
+  // Sample product data from products.html
+  const allProducts = [
+    {
+      title: "Hayabusa T3 Boxing Gloves",
+      price: 259.95,
+      img: "hayabusa-t3-boxing-gloves.jpg",
+      description: "Premium quality gloves built for performance and durability.",
+      colors: ["Red", "Blue", "White", "Black"]
+    },
+    {
+      title: "SKS White Sakayant Muay Thai Gloves",
+      price: 199.95,
+      img: "SKS-Sakyant-Gloves-White-Side-Front.jpeg",
+      description: "Stylish Muay Thai gloves with traditional Sakayant design.",
+      colors: ["Red", "Blue", "White"]
+    },
+    {
+      title: "Twins BGVL3 Muay Thai Boxing Gloves",
+      price: 229.95,
+      img: "twins-special-bgvl3-muay-thai-boxing-gloves.jpeg",
+      description: "Top-tier Muay Thai gloves trusted by pros.",
+      colors: ["Red", "Blue", "White", "Black"]
+    },
+    {
+      title: "Cleto Reyes Training Boxing Gloves",
+      price: 449.95,
+      img: "cleto-reyes-training-boxing-gloves.jpeg",
+      description: "Handcrafted leather gloves made in Mexico, designed for elite performance.",
+      colors: ["Red", "Blue", "White", "Black"]
+    }
+    // ... add more if needed
+  ];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const openSearchBtn = document.getElementById("open-search");
+  const closeSearchBtn = document.getElementById("close-search");
+  const searchPanel = document.getElementById("search-panel");
+  const searchInput = document.getElementById("search-input");
+  const searchResults = document.getElementById("search-results");
+
+  if (openSearchBtn) {
+    openSearchBtn.addEventListener("click", () => {
+      searchPanel.classList.remove("hidden");
+      searchPanel.style.display = "block";
+      searchInput.focus();
+    });
+  }
+
+  if (closeSearchBtn) {
+    closeSearchBtn.addEventListener("click", () => {
+      searchPanel.classList.add("hidden");
+      searchPanel.style.display = "none";
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const keyword = searchInput.value.toLowerCase();
+      const filtered = allProducts.filter(p => p.title.toLowerCase().includes(keyword));
+    
+      searchResults.innerHTML = "";
+      filtered.forEach(product => {
+        const item = document.createElement("div");
+        item.className = "search-result-item";
+        item.innerHTML = `
+          <img src="${product.img}" alt="${product.title}">
+          <div>
+            <h4>${product.title}</h4>
+            <p>$${product.price.toFixed(2)}</p>
+          </div>
+        `;
+    
+        item.addEventListener("click", () => {
+          localStorage.setItem("selectedProduct", JSON.stringify(product));
+          window.location.href = "productpage.html";
+        });
+    
+        searchResults.appendChild(item);
+      });
+    });
+}});
+
+  // ===============================
+  // Confirm Order Function
+  // ===============================
+
+  document.getElementById("confirm-purchase-btn")?.addEventListener("click", () => {
+    const checkoutItems = document.getElementById("checkout-items");
+    const itemsHTML = checkoutItems.innerHTML;
+    const total = document.getElementById("checkout-total").textContent;
+  
+    // Save data to localStorage for the confirmation page
+    localStorage.setItem("orderItems", itemsHTML);
+    localStorage.setItem("orderTotal", total);
+  
+    // Clear cart data
+    localStorage.removeItem("cart");
+    if (document.getElementById("cart-items")) {
+      document.getElementById("cart-items").innerHTML = "";
+    }
+    if (document.getElementById("checkout-items")) {
+      document.getElementById("checkout-items").innerHTML = "";
+    }
+    if (document.getElementById("cart-total")) {
+      document.getElementById("cart-total").textContent = "Total: $0.00";
+    }
+    if (document.getElementById("checkout-total")) {
+      document.getElementById("checkout-total").textContent = "$0.00";
+    }
+  
+    // Redirect to confirmation page
+    window.location.href = "confirm-order.html";
+  });
+
+// Order Details
+document.addEventListener("DOMContentLoaded", () => {
+  const items = localStorage.getItem("orderItems");
+  const total = localStorage.getItem("orderTotal");
+
+  if (document.getElementById("confirmed-items")) {
+    document.getElementById("confirmed-items").innerHTML = items || "<p>No items found.</p>";
+    document.getElementById("confirmed-total").textContent = total || "$0.00";
+  }
+});
