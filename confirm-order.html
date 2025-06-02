@@ -10,7 +10,7 @@
 
     <header class="navbar">
         <div class="logo">
-          <a href="#"><img src="THAT MMA SHOP LOGO.png" alt="That MMA Shop Logo" /></a>
+          <a href="homepage.html"><img src="THAT MMA SHOP LOGO.png" alt="That MMA Shop Logo" /></a>
         </div>
       
         <div class="nav-container">
@@ -23,13 +23,33 @@
             <a href="#">Youths</a>
           </nav>
           <div class="nav-icons">
-            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-search">
+              <img src="search icon.png" alt="Search" />
+            </button>
             <button id="open-cart" aria-label="Open Cart"> 
                 <img src="cart icon.png" alt="Cart" /> 
             </button>
           </div>
         </div>
     </header>
+
+    <main class="checkout-container">
+      <section class="checkout-summary">
+        <h1>Thank you for your purchase!</h1>
+        <p>Your order has been confirmed. A confirmation email has been sent to you.</p>
+        <h2>Order Summary</h2>
+        <div id="confirmed-items"></div>
+        <p><strong>Total Paid:</strong> <span id="confirmed-total"></span></p>
+        <a href="products.html" class="checkout-btn">Continue Shopping</a>
+      </section>
+    </main>
+
+    <!-- SEARCH PANEL -->
+    <div id="search-panel" class="search-panel hidden">
+      <button id="close-search">✖</button>
+      <input type="text" id="search-input" placeholder="Search for products...">
+      <div id="search-results"></div>
+    </div>
 
     <!-- CART SIDEPANEL -->
     <div id="cart-panel" class="cart-panel">
