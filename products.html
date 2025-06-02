@@ -24,7 +24,9 @@
             <a href="#">Youths</a>
           </nav>
           <div class="nav-icons">
-            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-search">
+              <img src="search icon.png" alt="Search" />
+            </button>
             <button id="open-cart" aria-label="Open Cart"> 
                 <img src="cart icon.png" alt="Cart" /> 
             </button>
@@ -125,7 +127,13 @@
         <!-- Row 1 -->
         <div 
         onclick="openProductPage('Hayabusa T3 Boxing Gloves', 259.95, 'hayabusa-t3-boxing-gloves.jpg', ['Red', 'Blue', 'White', 'Black'], 'Premium quality gloves built for performance and durability.')"
-        class="product-card" data-brand="Hayabusa" data-price="259.95" data-colour="Red,Blue,White" data-size="12oz" data-type="Boxing Gloves">
+        class="product-card" 
+        data-brand="Hayabusa" 
+        data-price="259.95" 
+        data-colour="Red,Blue,White" 
+        data-size="12oz" 
+        data-type="Boxing Gloves" 
+        data-description="Premium quality gloves built for performance and durability.">
           <div class="image-wrapper">
             <img src="hayabusa-t3-boxing-gloves.jpg" alt="Hayabusa T3 Boxing Gloves">
           </div>
@@ -142,7 +150,13 @@
       
         <div 
         onclick="openProductPage('SKS White Sakayant Muay Thai Gloves', 199.95, 'SKS-Sakyant-Gloves-White-Side-Front.jpeg', ['Red', 'Blue', 'White'], 'Stylish Muay Thai gloves with traditional Sakayant design.')"
-        class="product-card" data-brand="SKS" data-price="199.95" data-colour="Red,Blue,White" data-size="10oz" data-type="Muay Thai Gloves">
+        class="product-card" 
+        data-brand="SKS" 
+        data-price="199.95" 
+        data-colour="Red,Blue,White" 
+        data-size="10oz" 
+        data-type="Muay Thai Gloves"
+        data-description="Stylish Muay Thai gloves with traditional Sakayant design.">
           <div class="image-wrapper">
             <img src="SKS-Sakyant-Gloves-White-Side-Front.jpeg" alt="SKS Muay Thai Gloves">
           </div>
@@ -158,7 +172,13 @@
       
         <div 
         onclick="openProductPage('Twins BGVL3 Muay Thai Boxing Gloves', 229.95, 'twins-special-bgvl3-muay-thai-boxing-gloves.jpeg', ['Red', 'Blue', 'White', 'Black'], 'Top-tier Muay Thai gloves trusted by pros.')"
-        class="product-card" data-brand="Twins" data-price="229.95" data-colour="Red,Blue,White,Black" data-size="14oz" data-type="Muay Thai Gloves">
+        class="product-card" 
+        data-brand="Twins" 
+        data-price="229.95" 
+        data-colour="Red,Blue,White,Black" 
+        data-size="14oz" 
+        data-type="Muay Thai Gloves"
+        data-description="Top-tier Muay Thai gloves trusted by pros.">
           <div class="image-wrapper">
             <img src="twins-special-bgvl3-muay-thai-boxing-gloves.jpeg" alt="Twins BGVL3 Muay Thai Boxing Gloves">
           </div>
@@ -175,7 +195,14 @@
       
         <div 
         onclick="openProductPage('Cleto Reyes Training Boxing Gloves', 449.95, 'cleto-reyes-training-boxing-gloves.jpeg', ['Red', 'Blue', 'White', 'Black'], 'Handcrafted leather gloves made in Mexico, designed for elite performance.')"
-        class="product-card" data-brand="Cleto" data-price="449.95" data-colour="Red,Blue,White,Black" data-size="16oz" data-type="Training Gloves">
+        class="product-card" 
+        data-brand="Cleto" 
+        data-price="449.95" 
+        data-colour="Red,Blue,White,Black" 
+        data-size="16oz" 
+        data-type="Training Gloves"
+        data-description="Handcrafted leather gloves made in Mexico, designed for elite performance."
+        >
           <div class="image-wrapper">
             <img src="cleto-reyes-training-boxing-gloves.jpeg" alt="Cleto Reyes Training Boxing Gloves">
           </div>
@@ -301,7 +328,14 @@
         </div>
       </section>
 
-    <!-- CART SIDEPANEL -->
+      <!-- SEARCH PANEL -->
+    <div id="search-panel" class="search-panel hidden">
+        <button id="close-search">✖</button>
+        <input type="text" id="search-input" placeholder="Search for products...">
+        <div id="search-results"></div>
+    </div>
+    
+      <!-- CART SIDEPANEL -->
     <div id="cart-panel" class="cart-panel">
         <button id="close-cart" aria-label="Close Cart">✖</button>
         <h2>Your Cart</h2>
