@@ -23,7 +23,9 @@
             <a href="#">Youths</a>
           </nav>
           <div class="nav-icons">
-            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-search">
+              <img src="search icon.png" alt="Search" />
+            </button>
             <button id="open-cart" aria-label="Open Cart"> 
                 <img src="cart icon.png" alt="Cart" /> 
             </button>
@@ -73,7 +75,14 @@
         </div>
       </section>
 
-    <!-- CART SIDEPANEL -->
+      <!-- SEARCH PANEL -->
+    <div id="search-panel" class="search-panel hidden">
+        <button id="close-search">✖</button>
+        <input type="text" id="search-input" placeholder="Search for products...">
+        <div id="search-results"></div>
+    </div>
+    
+      <!-- CART SIDEPANEL -->
     <div id="cart-panel" class="cart-panel">
         <button id="close-cart" aria-label="Close Cart">✖</button>
         <h2>Your Cart</h2>
