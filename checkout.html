@@ -23,7 +23,9 @@
             <a href="#">Youths</a>
           </nav>
           <div class="nav-icons">
-            <a href="#"><img src="search icon.png" alt="Search" /></a>
+            <button id="open-search">
+              <img src="search icon.png" alt="Search" />
+            </button>
             <button id="open-cart" aria-label="Open Cart"> 
                 <img src="cart icon.png" alt="Cart" /> 
             </button>
@@ -66,10 +68,17 @@
         <div id="checkout-items" class="checkout-items"></div>
         <div class="checkout-total">
             <p><strong>Total: </strong><span id="checkout-total">$0.00</span></p>
-            <button class="confirm-btn">Confirm Purchase</button>
+            <button class="confirm-btn" id="confirm-purchase-btn">Confirm Purchase</button>
         </div>
         </section>
     </main>
+
+    <!-- SEARCH PANEL -->
+    <div id="search-panel" class="search-panel hidden">
+        <button id="close-search">✖</button>
+        <input type="text" id="search-input" placeholder="Search for products...">
+        <div id="search-results"></div>
+    </div>
 
     <!-- CART SIDEPANEL -->
     <div id="cart-panel" class="cart-panel">
