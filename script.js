@@ -428,6 +428,7 @@ if (openSearchBtn) {
     searchPanel.classList.remove("hidden");
     searchPanel.style.display = "block";
     searchInput.focus();
+    document.body.style.overflow = "hidden"; //Disable Body Scroll //
   });
 }
 
@@ -435,6 +436,7 @@ if (closeSearchBtn) {
   closeSearchBtn.addEventListener("click", () => {
     searchPanel.classList.add("hidden");
     searchPanel.style.display = "none";
+    document.body.style.overflow = ""; // Re-enable body scroll //
   });
 }
 
