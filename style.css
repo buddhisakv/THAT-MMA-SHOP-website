@@ -1009,3 +1009,38 @@ a {
       flex-wrap: wrap;  /* ensures text/images don’t overflow */
     }
   }
+
+/* Footer layout on small screens */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.footer-section {
+  text-align: left;
+}
+
+/* Optional: center align text for a cleaner stacked layout */
+.footer-section h4,
+.footer-section ul,
+.footer-section p,
+.footer-section form {
+  text-align: left;
+}
+
+/* Ensure social icons stack or wrap cleanly */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+/* Prevent image overflow from buttons or social icons */
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
