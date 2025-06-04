@@ -509,3 +509,32 @@ if (document.getElementById("confirmed-items")) {
   document.getElementById("confirmed-total").textContent = total || "$0.00";
 }
 });
+
+// ===============================
+// Sort By Function
+// ===============================
+const productGrid = document.querySelector('.product-preview-grid');
+const originalCards = Array.from(productGrid.children); // Store original order once
+
+document.getElementById('sort-options').addEventListener('change', function () {
+  const sortOrder = this.value;
+  const cards = Array.from(productGrid.querySelectorAll('.product-card'));
+
+  const getPrice = (card) => {
+    const priceText = card.querySelector('p').innerText;
+    return parseFloat(priceText.replace('$', ''));
+  };
+
+  let sortedCards;
+
+  if (sortOrder === 'asc') {
+    sortedCards = [...cards].sort((a, b) => getPrice(a) - getPrice(b));
+  } else if (sortOrder === 'desc') {
+    sortedCards = [...cards].sort((a, b) => getPrice(b) - getPrice(a));
+  } else {
+    sortedCards = [...originalCards]; // Restore to original order
+  }
+
+  productGrid.innerHTML = '';
+  sortedCards.forEach(card => productGrid.appendChild(card));
+});

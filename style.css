@@ -840,7 +840,8 @@ a {
 /* ========================
    Responsive for small screens
    ======================== */
-   @media (max-width: 390px) {
+   @media (max-width: 400px) {
+    
     .navbar {
       flex-direction: column;
       align-items: stretch;
@@ -922,35 +923,56 @@ a {
     }
   
     .product-preview-grid {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      padding: 1rem 1.2rem;
-      overflow-x: hidden;
+      gap: 1rem; /* Smaller and equal row/column gap */
+      padding: 0.5rem;
+      box-sizing: border-box;
+      justify-content: center;
     }
+    
   
     .product-card {
+      width: 100%;
+      max-width: 160px;  /* restrict to fit inside grid */
       background-color: #1a1a1a;
       border-radius: 10px;
-      padding: 1rem;
-      width: 100%;
+      padding: 0.75rem;
       text-align: center;
       color: white;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Optional for depth */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .image-wrapper {
       width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1; /* Ensures square shape */
-      overflow: hidden;
+      aspect-ratio: 1 / 1.1;
       border-radius: 6px;
+      overflow: hidden;
       background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     .image-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    } 
+    
+    .product-card h3 {
+      font-size: 1rem;
+      margin: 0.5rem 0 0.25rem;
+    }
+  
+    .product-card p {
+      font-size: 0.9rem;
+      color: #9fff9f;
+      margin: 0.25rem 0;
     }
   
     .product-page-content {
@@ -992,12 +1014,13 @@ a {
   
     .search-panel {
       top: 60px;
-      right: 10px;
-      width: 90%;
+      left: 10px;
+      width: 50%;
       max-height: 70vh;  /* 70% of viewport height */
       overflow-y: auto;  /* enable vertical scrolling */
       padding: 1rem;
       box-sizing: border-box;
+      justify-content: center;
     }
   
     button, .qty-btn, .remove-btn {
@@ -1008,39 +1031,76 @@ a {
     .search-result-item {
       flex-wrap: wrap;  /* ensures text/images don’t overflow */
     }
-  }
 
-/* Footer layout on small screens */
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
-}
 
-.footer-section {
-  text-align: left;
-}
+    /* Footer layout on small screens */
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    
+    .footer-section {
+      text-align: left;
+    }
+    
+    /* Optional: center align text for a cleaner stacked layout */
+    .footer-section h4,
+    .footer-section ul,
+    .footer-section p,
+    .footer-section form {
+      text-align: left;
+    }
+    
+    /* Ensure social icons stack or wrap cleanly */
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-start;
+    }
+    
+    /* Prevent image overflow from buttons or social icons */
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    
+    /* Footer layout on small screens */
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    
+    .footer-section {
+      text-align: left;
+    }
+    
+    /* Optional: center align text for a cleaner stacked layout */
+    .footer-section h4,
+    .footer-section ul,
+    .footer-section p,
+    .footer-section form {
+      text-align: left;
+    }
+    
+    /* Ensure social icons stack or wrap cleanly */
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-start;
+    }
+    
+    /* Prevent image overflow from buttons or social icons */
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
 
-/* Optional: center align text for a cleaner stacked layout */
-.footer-section h4,
-.footer-section ul,
-.footer-section p,
-.footer-section form {
-  text-align: left;
-}
-
-/* Ensure social icons stack or wrap cleanly */
-.social-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: flex-start;
-}
-
-/* Prevent image overflow from buttons or social icons */
-.social-icons a img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
 }
