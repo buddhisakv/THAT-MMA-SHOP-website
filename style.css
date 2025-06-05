@@ -661,6 +661,9 @@ a {
   margin: auto;
   align-items: flex-start;
   margin-bottom: 2rem;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .checkout-form, .checkout-summary {
@@ -949,6 +952,7 @@ a {
 
     .image-wrapper {
       width: 100%;
+      height: 120px;
       aspect-ratio: 1 / 1.1;
       border-radius: 6px;
       overflow: hidden;
@@ -1004,18 +1008,50 @@ a {
     }
   
     .checkout-container {
-      flex-direction: column;
-      padding: 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      padding-bottom: 2rem;
     }
-  
+    
+    .checkout-form {
+      flex: 1 1 100%;
+    }
+    
     .checkout-form .row {
-      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    .checkout-form .row .column {
+      flex: 1 1 48%;
+      min-width: 140px;
+    }
+    
+    .checkout-form .row input {
+      flex: 1 1 calc(50% - 0.5rem);  /* two inputs per row with 1rem gap */
+      min-width: 130px;
+      box-sizing: border-box;
+    }
+
+    .checkout-form input {
+      font-size: 0.95rem;
     }
   
     .search-panel {
       top: 60px;
       left: 10px;
-      width: 50%;
+      width: 70%;
       max-height: 70vh;  /* 70% of viewport height */
       overflow-y: auto;  /* enable vertical scrolling */
       padding: 1rem;
@@ -1101,6 +1137,73 @@ a {
       width: 32px;
       height: 32px;
       object-fit: contain;
+    } 
+    
+    /* Make filters stack vertically and match width */
+    .filters {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .dropdown {
+      width: 100%;
+    }
+    
+    .dropdown-toggle {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-sizing: border-box; /* ✅ Ensure padding doesn't exceed */
+    }
+    
+    .dropdown-menu {
+      background-color: white;
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin-top: 0.25rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+    
+    .dropdown-menu label,
+    .dropdown-menu p {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    } 
+
+
+    .sort select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      appearance: none; /* optional: to remove native arrow */
     }
 
+    .sort {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
 }
