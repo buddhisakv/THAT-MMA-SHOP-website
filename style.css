@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&display=swap');
+
+/*For General Text*/
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+button,
+input,
+a {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,7 +30,7 @@ a {
   margin-right: 1rem;
 }
 
-/* NEW: Navbar Layout */
+/* Navbar Layout */
 .navbar{
   display: flex;
   justify-content: space-evenly;
@@ -86,8 +104,8 @@ a {
   z-index: 999;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem; /* ✅ NEW: Adds internal spacing */
-  box-sizing: border-box; /* ✅ Ensures padding doesn't overflow */
+  padding: 1.5rem; /* Adds internal spacing */
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
 }
 
 .cart-panel.open {
@@ -493,9 +511,7 @@ a {
   background-color: #e0e0e0;
 }
 
-/* ========================
- PRODUCT PAGE STYLING
- ======================== */
+/*PRODUCT PAGE STYLING*/
 .product-page-content {
   max-width: 1200px;
   margin: 40px auto;
@@ -639,7 +655,7 @@ a {
   font-weight: bold;
   border-radius: 4px;
   transition: background-color 0.3s;
-  width: 93%; /* Ensure full width */
+  width: 93%;
 }
 
 .checkout-btn:hover {
@@ -887,7 +903,7 @@ a {
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 0.5rem 1rem; /* ✅ move spacing here, not wrapper */
+      padding: 0.5rem 1rem; /* move spacing here, not wrapper */
     }
     
     .nav-menu::-webkit-scrollbar {
@@ -897,7 +913,7 @@ a {
     .nav-menu a {
       flex: 0 0 auto;
       font-weight: bold;
-      padding: 0.25rem 0.5rem; /* ✅ optional inner spacing on links */
+      padding: 0.25rem 0.5rem; /* inner spacing on links */
     }
     
     #open-search {
