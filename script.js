@@ -413,7 +413,7 @@ const allProducts = [
     description: "Handcrafted leather gloves made in Mexico, designed for elite performance.",
     colors: ["Red", "Blue", "White", "Black"]
   }
-  // ... add more if needed
+  // For this implementation, there will only be 4 available products used for exmaple.
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
